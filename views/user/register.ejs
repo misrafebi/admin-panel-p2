@@ -1,0 +1,108 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>user register</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+  <form action="/user/register" method="post" id="user-register-form">
+    <input type="text" name="username" id="username" placeholder="username">
+    <input type="text" name="password" id="password" placeholder="password">
+    <input type="text" name="confirmPassword" id="confirmPassword" placeholder="confirm-password">
+    <button type="submit">register</button>
+  </form>
+
+  <script src="/styles/userregister.js"></script> -->
+<!-- <script>
+
+
+    const formSubmit = document.getElementById('user-register-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (username == '' || confirmPassword == '') {
+        swal(" All field requied");
+        return false
+      } else if (password != confirmPassword) {
+        swal("Passwords do not match");
+        return false
+      }
+      event.target.formSubmit()
+      return true
+    })
+
+
+  </script> -->
+<!-- </body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Register</title>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="/styles/login.css">
+</head>
+
+<body>
+  <div class="login-page">
+    <div class="form">
+      <!-- <form class="register-form" action="/user/register" method="post" id="user-register-form">
+        <input type="text" name="username" id="username" placeholder="username" />
+        <input type="text" name="password" id="password" placeholder="password" />
+        <input type="text" name="confirmPassword" id="confirmPassword" placeholder="confirm-password">
+        <button>create</button>
+        <p class="message">Already registered? <a href="#">Sign In</a></p>
+      </form> -->
+      <!-- <form class="login-form" action="/user/register" method="post" id="user-register-form">
+        <input type="text" name="username" id="username" placeholder="username" />
+        <input type="text" name="password" id="password" placeholder="password" />
+        <input type="text" name="confirmPassword" id="confirmPassword" placeholder="confirm-password">
+        <button>Create</button>
+        <p class="message">Already registered? <a href="/user/login.ejs">Log In </a></p>
+      </form> -->
+
+      <form class="login-form" action="/user/register" method="post" id="user-register-form">
+        <input type="text" name="username" id="username" placeholder="username" />
+        <input type="text" name="password" id="password" placeholder="password" />
+        <input type="text" name="confirmPassword" id="confirmPassword" placeholder="confirm-password">
+        <button>Create</button>
+        <p class="message">Already registered? <a href="/user/login">Log In</a></p>
+    </form>
+    
+    </div>
+  </div>
+  <script src="/styles/login.js"></script>
+  <script src="/styles/userregister.js"></script>
+
+
+  <% if (typeof errorMessage != 'undefined') { %>
+    <script>
+      // alert("<%= errorMessage %>")
+      swal("<%= errorMessage %>");
+    </script>
+  <% } %>
+
+  <% if (typeof successMessage != 'undefined') { %>
+    <script>
+      // alert(' <%= successMessage %>')
+      alert(' <%= successMessage %>');
+
+    </script>
+  <% } %>
+
+</body>
+<!-- alert -->
+</html>
