@@ -9,6 +9,13 @@ router.post('/login',adminControler.login)
 
 router.get('/dashboard',adminAuth.checkSession,adminControler.loadDashboard)
 
-router.get('/logout', adminControler.logout);
+router.get('/logout', adminControler.logout, adminControler.loadLogin);
+
+router.post('/edit', adminControler.editUser);
+
+router.post('/delete', adminControler.deleteUser);
+
+router.post('/add', adminControler.addUser);
+
 
 module.exports = router
